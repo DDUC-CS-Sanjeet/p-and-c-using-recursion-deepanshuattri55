@@ -24,7 +24,7 @@ int combination(int n, int r)
   }
   else
   {
-  	return (n)*combination(n-1,r-1)/r;
+  	return ((n*1.o))*combination(n-1,r-1)/r;
   }
   
   return 0;
@@ -33,7 +33,7 @@ int combination(int n, int r)
 int main()
 {
 		int x=1;
-	float per,com,n,r;
+	int per,com,n,r;
 	cout<<"enter the number you want to do"<<endl;
 	cin>>n>>r;
 	try

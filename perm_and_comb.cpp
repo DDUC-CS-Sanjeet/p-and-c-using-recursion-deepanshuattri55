@@ -3,10 +3,14 @@ using namespace std;
 
 int permutation(int n, int r)
 {
-	 if(r==0)
+	 if(r==0||n==0)
   {
      return 1;
   }
+   else if(r==1)
+  {
+  	 return n;
+  }	
   else
   {
   	return (n)*permutation(n-1,r-1);
@@ -18,13 +22,17 @@ int permutation(int n, int r)
 int combination(int n, int r)
 {
 	 
-  if(r==0)
+  if(r==0||n==0)
   {
      return 1;
   }
+     else if(r==1)
+  {
+  	 return n;
+  }	
   else
   {
-  	return ((n*1.o))*combination(n-1,r-1)/r;
+  	return 1.0*combination(n-1,r-1)/r*n;
   }
   
   return 0;
@@ -33,15 +41,17 @@ int combination(int n, int r)
 int main()
 {
 		int x=1;
-	int per,com,n,r;
+	int n,r;
+	double result;
+	double result1;
 	cout<<"enter the number you want to do"<<endl;
 	cin>>n>>r;
 	try
 	{
 		if (r==0)
 		{
-			per=1;
-			com=1;
+			result=1;
+			result1=1;
 		}
 		else if (n<0||r<0)
 		{
@@ -53,12 +63,12 @@ int main()
 		}
 		else
 		{
-			per=permutation(n,r);
-			com=combination(n,r);
+			result=permutation(n,r);
+			result1=combination(n,r);
 			
 		}
-		cout<<"\n permutation is:: "<<per;
-		cout<<"\n combination is:: "<<com;
+		cout<<"\n permutation is:: "<<result;
+		cout<<"\n combination is:: "<<result1;
 	}
 	catch(int a)
 	{
